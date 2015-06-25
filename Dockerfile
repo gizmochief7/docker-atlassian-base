@@ -1,12 +1,23 @@
-FROM java:8-jre
+FROM buildpack-deps:jessie-curl
 MAINTAINER Jonathon Leight <jonathon.leight@jleight.com>
 
-ENV ATL_USER=atlassian \
-  ATL_HOME=/opt/atlassian \
-  ATL_DATA=/var/opt/atlassian \
-  ATL_BASEURL=http://www.atlassian.com/software
+ENV JAVA_BASEURL http://download.oracle.com/otn-pub/java/jdk/8u45-b14/
+ENV JAVA_PACKAGE jre-8u45-linux-x64.tar.gz
+ENV JAVA_VERSION jre1.8.0_45
+ENV JAVA_URL     ${JAVA_BASEURL}/${JAVA_PACKAGE}
+ENV JAVA_COOKIE  oraclelicense=accept-securebackup-cookie
+ENV JAVA_HOME    /opt/jre/${JAVA_VERSION}
+ENV JAVA_EXE     ${JAVA_HOME}/bin/java
+
+ENV ATL_USER     atlassian
+ENV ATL_HOME     /opt/atlassian
+ENV ATL_DATA     /var/opt/atlassian
+ENV ATL_BASEURL  http://www.atlassian.com/software
 
 RUN set -x \
+  && mkdir -p /opt/jre \
+  && curl -kLb ${JAVA_COOKIE} ${JAVA_URL} | tar -xz -C /opt/jre \
+  && update-alternatives --install /usr/bin/java java ${JAVA_EXE} 100 \
   && apt-get update \
   && apt-get install -y libtcnative-1 \
   && apt-get clean \

@@ -1,9 +1,9 @@
 FROM buildpack-deps:jessie-curl
 MAINTAINER Jonathon Leight <jonathon.leight@jleight.com>
 
-ENV JAVA_BASEURL http://download.oracle.com/otn-pub/java/jdk/8u60-b27/
-ENV JAVA_PACKAGE jre-8u60-linux-x64.tar.gz
-ENV JAVA_VERSION jre1.8.0_60
+ENV JAVA_BASEURL http://download.oracle.com/otn-pub/java/jdk/8u66-b17
+ENV JAVA_PACKAGE jre-8u66-linux-x64.tar.gz
+ENV JAVA_VERSION jre1.8.0_66
 ENV JAVA_URL     ${JAVA_BASEURL}/${JAVA_PACKAGE}
 ENV JAVA_COOKIE  oraclelicense=accept-securebackup-cookie
 ENV JAVA_HOME    /opt/jre/${JAVA_VERSION}

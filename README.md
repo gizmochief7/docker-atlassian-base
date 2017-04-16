@@ -12,9 +12,9 @@ Atlassian® Software Containers
 
 The following pre-made containers are built and ready for you to use:
 
-* [Confluence®](https://github.com/jleight/docker-atlassian-confluence)
-* [Atlassian Crowd®](https://github.com/jleight/docker-atlassian-crowd)
-* [JIRA®](https://github.com/jleight/docker-atlassian-jira)
-* [Atlassian Stash™](https://github.com/jleight/docker-atlassian-stash)
+* [Confluence®](https://github.com/gizmochief7/docker-atlassian-confluence)
+* [Atlassian Crowd®](https://github.com/gizmochief7/docker-atlassian-crowd)
+* [JIRA®](https://github.com/gizmochief7/docker-atlassian-jira)
+* [Atlassian Stash™](https://github.com/gizmochief7/docker-atlassian-stash)
 
 Please read the individual container's README.md for more information.
